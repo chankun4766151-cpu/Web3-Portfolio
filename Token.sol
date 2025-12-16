@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import "./ITokenReceiver.sol";
+
+
 contract BaseERC20 {
     string public name;
     string public symbol;
@@ -13,6 +16,12 @@ contract BaseERC20 {
 
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
+    event TransferWithCallback(
+    address indexed from,
+    address indexed to,
+    uint256 value,
+    bytes data
+);
 
     constructor() {
         name = "BaseERC20";
@@ -55,4 +64,41 @@ contract BaseERC20 {
         emit Transfer(_from, _to, _value);
         return true;
     }
+     /**
+     * @dev 带回调的转账：若_to为合约地址，则调用 tokensReceived()
+     */
+        function transferWithCallback(
+        address _to,
+        uint256 _value,
+        bytes calldata _data
+    ) external returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+
+        // 如果_to是合约地址，则触发hook
+        if (_isContract(_to)) {
+            ITokenReceiver(_to).tokensReceived(msg.sender, msg.sender, _value, _data);
+        }
+
+        emit TransferWithCallback(msg.sender, _to, _value, _data);
+        return true;
+        
+        }
+
+    // ---------------- internal helpers ----------------
+
+    function _transfer(address _from, address _to, uint256 _value) internal {
+        require(_to != address(0), "ERC20: transfer to zero address");
+        require(balances[_from] >= _value, "ERC20: transfer amount exceeds balance");
+
+        balances[_from] -= _value;
+        balances[_to] += _value;
+
+        emit Transfer(_from, _to, _value);
+    }
+
+    function _isContract(address account) internal view returns (bool) {
+        // extcodesize/account.code.length 在构造函数期间为0；这是EVM特性
+        return account.code.length > 0;
+    }
+    
 }
