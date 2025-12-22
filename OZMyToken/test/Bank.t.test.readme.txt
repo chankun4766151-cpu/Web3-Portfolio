@@ -1,0 +1,19 @@
+PS D:\ETHChiangmai\OZMyToken> forge test -vv
+[⠊] Compiling...
+[⠃] Compiling 1 files with Solc 0.8.20
+[⠊] Solc 0.8.20 finished in 762.89ms
+Compiler run successful!
+
+Ran 9 tests for test/Bank.t.sol:BankTest
+[PASS] test_Deposit_RevertWhenAmountZero() (gas: 11786)
+[PASS] test_Deposit_UpdatesBalanceCorrectly() (gas: 104514)
+[PASS] test_Top3_SameUserMultipleDeposits() (gas: 239491)
+[PASS] test_Top3_With1User() (gas: 84728)
+[PASS] test_Top3_With2Users() (gas: 149761)
+[PASS] test_Top3_With3Users() (gas: 215459)
+[PASS] test_Top3_With4Users() (gas: 261856)
+[PASS] test_Withdraw_OnlyOwnerCanWithdraw() (gas: 100666)
+[PASS] test_Withdraw_RevertWhenInsufficientBankBalance() (gas: 82938)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 1.71ms (5.63ms CPU time)
+
+Ran 1 test suite in 8.53ms (1.71ms CPU time): 9 tests passed, 0 failed, 0 skipped (9 total tests)
