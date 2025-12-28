@@ -1,0 +1,25 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model Transfer {
+  id          Int     @id @default(autoincrement())
+  token       String
+  txHash      String
+  logIndex    Int
+  blockNumber Int
+  from        String
+  to          String
+  value       String  // 用字符串存，避免 JS number 溢出
+  timestamp   Int
+
+  @@unique([txHash, logIndex])
+  @@index([from])
+  @@index([to])
+}
