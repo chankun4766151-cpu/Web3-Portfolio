@@ -1,0 +1,21 @@
+No files changed, compilation skipped
+
+Ran 6 tests for test/MultiSigWallet.t.sol:MultiSigWalletTest
+[PASS] test_ConfirmTransaction() (gas: 153182)
+[PASS] test_Constructor() (gas: 28377)
+[PASS] test_ExecuteTransaction() (gas: 240175)
+[PASS] test_ExecuteTransactionFailBelowThreshold() (gas: 146987)
+[PASS] test_SubmitTransaction() (gas: 102455)
+[PASS] test_SubmitTransactionRevertIfNotOwner() (gas: 15442)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 2.04ms (2.60ms CPU time)
+
+Ran 2 tests for test/NFTMarket.t.sol:NFTMarketTest
+[PASS] testPermitBuy() (gas: 152908)
+[PASS] test_PermitBuy_NotWhitelisted() (gas: 54747)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 2.06ms (1.36ms CPU time)
+
+Ran 1 test for test/TokenBank.t.sol:TokenBankTest
+[PASS] testPermitDeposit() (gas: 124565)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 2.18ms (1.03ms CPU time)
+
+Ran 3 test suites in 9.65ms (6.28ms CPU time): 9 tests passed, 0 failed, 0 skipped (9 total tests)

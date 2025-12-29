@@ -1,0 +1,15 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/NFTMarket.t.sol:NFTMarketTest
+[FAIL: `testFail*` has been removed. Consider changing to test_Revert[If|When]_Condition and expecting a revert] testFailPermitBuyNotWhitelisted() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 947.50µs (0.00ns CPU time)
+
+Ran 1 test suite in 7.61ms (947.50µs CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/NFTMarket.t.sol:NFTMarketTest
+[FAIL: `testFail*` has been removed. Consider changing to test_Revert[If|When]_Condition and expecting a revert] testFailPermitBuyNotWhitelisted() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
