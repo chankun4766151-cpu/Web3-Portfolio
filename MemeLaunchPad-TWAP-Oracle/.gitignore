@@ -1,0 +1,39 @@
+# Foundry
+out/
+cache/
+cache_hardhat/
+cache_forge/
+
+# Dependencies
+node_modules/
+lib/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Build artifacts
+artifacts/
+typechain/
+typechain-types/
+
+# Coverage
+coverage/
+lcov.info
+
+# Gas reports
+gas-report.txt
+
+# Broadcast logs
+broadcast/
