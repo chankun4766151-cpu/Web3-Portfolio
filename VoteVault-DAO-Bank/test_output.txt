@@ -1,0 +1,172 @@
+No files changed, compilation skipped
+
+Ran 6 tests for test/VoteVaultTest.t.sol:VoteVaultTest
+[PASS] testCannotWithdrawDirectly() (gas: 13251)
+Logs:
+  
+=== Deploying Contracts ===
+  VotingToken deployed at: 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+  Initial supply: 1000000 VVT
+  MyGovernor deployed at: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  Bank deployed at: 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+  Bank admin: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  
+=== Distributing Tokens ===
+  Owner balance: 400000 VVT
+  Voter1 balance: 300000 VVT
+  Voter2 balance: 200000 VVT
+  Voter3 balance: 100000 VVT
+  
+=== Bank Initial State ===
+  Bank balance: 10 ETH
+
+[PASS] testCompleteDAOWorkflow() (gas: 545800)
+Logs:
+  
+=== Deploying Contracts ===
+  VotingToken deployed at: 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+  Initial supply: 1000000 VVT
+  MyGovernor deployed at: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  Bank deployed at: 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+  Bank admin: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  
+=== Distributing Tokens ===
+  Owner balance: 400000 VVT
+  Voter1 balance: 300000 VVT
+  Voter2 balance: 200000 VVT
+  Voter3 balance: 100000 VVT
+  
+=== Bank Initial State ===
+  Bank balance: 10 ETH
+  
+=== Complete DAO Workflow Test ===
+  
+--- Step 1: Delegate Voting Power ---
+  Owner voting power: 400000 votes
+  Voter1 voting power: 300000 votes
+  Voter2 voting power: 200000 votes
+  
+--- Step 2: Create Proposal ---
+  Proposal ID: 63094977713851490786081426254802681908017349774027484485403319502278027516441
+  Proposal state: Pending
+  
+--- Step 3: Wait for Voting Period ---
+  Current block: 4
+  Proposal state: Active
+  
+--- Step 4: Voting ---
+  Owner voted: For
+  Voter1 voted: For
+  Voter2 voted: Against
+  
+Voting Results:
+  - For: 700000 votes (70%)
+  - Against: 200000 votes (20%)
+  - Abstain: 0 votes (0%)
+  
+--- Step 5: Wait for Voting to End ---
+  Current block: 50405
+  Proposal state: Succeeded
+  
+--- Step 6: Execute Proposal ---
+  Bank balance before: 10 ETH
+  Recipient balance before: 0 ETH
+  Proposal state: Executed
+  
+Bank balance after: 8 ETH
+  Recipient balance after: 2 ETH
+  
+=== DAO Workflow Test Successful! ===
+
+[PASS] testCreateProposal() (gas: 146733)
+Logs:
+  
+=== Deploying Contracts ===
+  VotingToken deployed at: 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+  Initial supply: 1000000 VVT
+  MyGovernor deployed at: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  Bank deployed at: 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+  Bank admin: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  
+=== Distributing Tokens ===
+  Owner balance: 400000 VVT
+  Voter1 balance: 300000 VVT
+  Voter2 balance: 200000 VVT
+  Voter3 balance: 100000 VVT
+  
+=== Bank Initial State ===
+  Bank balance: 10 ETH
+  
+=== Testing Proposal Creation ===
+  Proposal created with ID: 1187594841028846609828957793413672013710849458113618228682665093003481136325
+  Proposal state: Pending
+
+[PASS] testDelegation() (gas: 211819)
+Logs:
+  
+=== Deploying Contracts ===
+  VotingToken deployed at: 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+  Initial supply: 1000000 VVT
+  MyGovernor deployed at: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  Bank deployed at: 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+  Bank admin: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  
+=== Distributing Tokens ===
+  Owner balance: 400000 VVT
+  Voter1 balance: 300000 VVT
+  Voter2 balance: 200000 VVT
+  Voter3 balance: 100000 VVT
+  
+=== Bank Initial State ===
+  Bank balance: 10 ETH
+  
+=== Testing Voting Power Delegation ===
+  Voter1 voting power: 300000 votes
+  Voter2 voting power: 200000 votes
+  Voter1 voting power (after voter3 delegation): 400000 votes
+
+[PASS] testInitialSetup() (gas: 18077)
+Logs:
+  
+=== Deploying Contracts ===
+  VotingToken deployed at: 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+  Initial supply: 1000000 VVT
+  MyGovernor deployed at: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  Bank deployed at: 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+  Bank admin: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  
+=== Distributing Tokens ===
+  Owner balance: 400000 VVT
+  Voter1 balance: 300000 VVT
+  Voter2 balance: 200000 VVT
+  Voter3 balance: 100000 VVT
+  
+=== Bank Initial State ===
+  Bank balance: 10 ETH
+
+[PASS] testProposalSucceedsWithQuorum() (gas: 215377)
+Logs:
+  
+=== Deploying Contracts ===
+  VotingToken deployed at: 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+  Initial supply: 1000000 VVT
+  MyGovernor deployed at: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  Bank deployed at: 0xF62849F9A0B5Bf2913b396098F7c7019b51A820a
+  Bank admin: 0x2e234DAe75C793f67A35089C9d99245E1C58470b
+  
+=== Distributing Tokens ===
+  Owner balance: 400000 VVT
+  Voter1 balance: 300000 VVT
+  Voter2 balance: 200000 VVT
+  Voter3 balance: 100000 VVT
+  
+=== Bank Initial State ===
+  Bank balance: 10 ETH
+  
+=== Testing Proposal With Quorum ===
+  10% voted For (exceeds 4% quorum requirement)
+  Proposal state: Succeeded (as expected)
+
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 2.39ms (2.97ms CPU time)
+
+Ran 1 test suite in 18.34ms (2.39ms CPU time): 6 tests passed, 0 failed, 0 skipped (6 total tests)
