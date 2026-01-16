@@ -1,0 +1,26 @@
+type List @entity(immutable: true) {
+  id: Bytes!
+  nft: Bytes! # address
+  tokenId: BigInt! # uint256
+  tokenURL: String!
+  seller: Bytes! # address
+  payToken: Bytes! # address
+  price: BigInt! #  uint256
+  deadline: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+  cancelTxHash: Bytes
+  filledTxHash: Bytes
+}
+
+type Sold @entity(immutable: true) {
+  id: Bytes!
+  buyer: Bytes! # address
+  fee: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+  # relation
+  list: List
+}
