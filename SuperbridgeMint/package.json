@@ -1,0 +1,24 @@
+{
+  "name": "superbridge-mint",
+  "version": "1.0.0",
+  "description": "Cross-chain token bridging from Sepolia to OP Sepolia",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:l1": "hardhat run scripts/1-deployL1Token.js --network sepolia",
+    "create:l2": "hardhat run scripts/2-createL2Token.js --network optimismSepolia",
+    "bridge": "hardhat run scripts/3-bridgeTokens.js --network sepolia",
+    "test": "hardhat test"
+  },
+  "keywords": ["ethereum", "optimism", "bridge", "erc20"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.4.0"
+  }
+}
